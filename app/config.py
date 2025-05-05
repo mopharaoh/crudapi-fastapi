@@ -1,5 +1,7 @@
 from pydantic_settings import BaseSettings
+from dotenv import load_dotenv
 
+load_dotenv()
 
 class Settings(BaseSettings):
     database_hostname:str
@@ -10,6 +12,7 @@ class Settings(BaseSettings):
     secret_key:str
     algorithm:str
     access_token_expire_minutes:int
+    DATABASE_PUBLIC_URL:str
 
     class Config:
         env_file=".env"
